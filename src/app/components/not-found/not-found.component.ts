@@ -17,11 +17,12 @@ import { RouterModule } from '@angular/router';
         <p class="mb-8">
           But dont worry, you can find plenty of other things on our homepage.
         </p>
-
+        <div></div>
         <button
+          [routerLink]="['/']"
           class="px-4 inline py-2 text-sm font-medium leading-5 shadow text-white transition-colors duration-150 border border-transparent rounded-lg focus:outline-none focus:shadow-outline-blue bg-blue-600 active:bg-blue-600 hover:bg-blue-700"
         >
-          <a [routerLink]="['/']"> back to homepage </a>
+          back to home page
         </button>
       </div>
       <div class="max-w-lg">
