@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterLink],
   template: `<div class="h-screen w-screen bg-gray-100 flex items-center">
     <div
       class="container flex flex-col md:flex-row items-center justify-center px-5 text-gray-700"

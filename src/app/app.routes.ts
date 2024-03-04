@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
-import { ContactComponent } from './components/contact/contact.component';
-import { HomeComponent } from './components/home/home.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { SignInComponent } from './components/sign-in/sign-in.component';
+import { LandingPageComponent } from './common/components/landing-page/landing-page.component';
+import { NotFoundComponent } from './common/components/not-found/not-found.component';
 
 export const routes: Routes = [
   {
@@ -12,16 +10,12 @@ export const routes: Routes = [
   },
   {
     path: '',
-    component: HomeComponent,
-    // canActivate: [AuthGuard],
+    component: LandingPageComponent,
   },
   {
-    path: 'sign-in',
-    component: SignInComponent,
-  },
-  {
-    path: 'contact',
-    component: ContactComponent,
+    path: 'auth',
+    loadChildren: () =>
+      import('./modules/auth/auth.routes').then((mod) => mod.AUTH_ROUTES),
   },
   { path: '**', component: NotFoundComponent },
 ];
