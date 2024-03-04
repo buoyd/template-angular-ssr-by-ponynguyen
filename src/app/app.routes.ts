@@ -13,9 +13,16 @@ export const routes: Routes = [
     component: LandingPageComponent,
   },
   {
-    path: 'auth',
+    path: '',
     loadChildren: () =>
       import('./modules/auth/auth.routes').then((mod) => mod.AUTH_ROUTES),
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./modules/dashboard/dashboard.routes').then(
+        (mod) => mod.DASHBOARD_ROUTES
+      ),
   },
   { path: '**', component: NotFoundComponent },
 ];
